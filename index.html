@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Jaquisson Guimarães | Neurocirurgião em Salvador e Feira de Santana</title>
+<meta name="description" content="Dr. Jaquisson Guimarães, médico neurocirurgião especialista em aneurismas cerebrais. Atendimento em Salvador (Hospital Aliança) e Feira de Santana.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Roboto:wght@400;500;700&family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#3c7baa; --blue-dark:#0b3f8a; --black:#000; --text:#535353; --white:#fff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:70px}
+  body{font-family:'Montserrat',sans-serif;color:var(--text);background:#fff;line-height:1.55}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .container{width:min(1140px,100% - 32px);margin-inline:auto}
+  .narrow{width:min(930px,100% - 32px);margin-inline:auto}
+
+  /* Botões */
+  .btn{display:inline-block;background:var(--blue);color:#fff;font-family:'Montserrat',sans-serif;font-weight:600;border-radius:10px;padding:10px 20px;font-size:1.05rem;transition:.25s}
+  .btn:hover{background:#2f6690;transform:translateY(-2px)}
+  .btn-lg{font-size:1.35rem;padding:12px 20px}
+  .btn-outline{font-family:'Roboto',sans-serif;font-weight:500;font-size:.94rem;color:#fff;border:1px solid #fff;border-radius:11px;padding:11px 20px;transition:.25s}
+  .btn-outline:hover{background:#fff;color:#000}
+
+  /* Títulos de seção (azul com sublinhado) */
+  .title{font-weight:600;font-size:1.8rem;color:var(--blue);text-align:center;display:inline-block;position:relative;padding-bottom:10px}
+  .title::after{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:120px;height:3px;background:var(--blue)}
+  .title.left::after{left:0;transform:none}
+  .center{text-align:center}
+
+  /* ===== HEADER ===== */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;background:#000;transition:box-shadow .3s}
+  header.scrolled{box-shadow:0 4px 18px rgba(0,0,0,.25)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:65px;width:min(1360px,100% - 48px);margin:0 auto;gap:20px}
+  .logo{display:flex;align-items:center;gap:8px;color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.25rem;line-height:.95}
+  .logo svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:1}
+  .menu{display:flex;gap:28px;list-style:none}
+  .menu a{font-family:'Roboto',sans-serif;font-weight:500;font-size:.94rem;color:#fff;transition:.2s}
+  .menu a:hover{color:var(--blue)}
+  .nav-right{display:flex;align-items:center;gap:120px}
+  .socials{display:flex;gap:6px}
+  .socials a{width:28px;height:28px;border-radius:50%;background:#fff;display:grid;place-items:center;transition:.2s}
+  .socials a:hover{transform:scale(1.1)}
+  .socials svg{width:14px;height:14px;fill:#000}
+  .burger{display:none;background:none;border:0;width:28px;height:20px;position:relative;cursor:pointer}
+  .burger span{position:absolute;left:0;width:100%;height:2px;background:#fff;transition:.3s}
+  .burger span:nth-child(1){top:0}.burger span:nth-child(2){top:9px}.burger span:nth-child(3){top:18px}
+  .burger.open span:nth-child(1){top:9px;transform:rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){top:9px;transform:rotate(-45deg)}
+
+  /* ===== HERO ===== */
+  .hero{background:#000;color:#fff;min-height:100vh;padding-top:65px;display:flex;align-items:stretch;overflow:hidden}
+  .hero-inner{display:grid;grid-template-columns:1fr 1fr;align-items:center;width:min(1360px,100% - 48px);margin:0 auto}
+  .hero-text{padding:40px 0 40px 4%}
+  .hero-text .name{font-weight:300;font-style:italic;font-size:1.7rem;line-height:1.1}
+  .hero-text .spec{font-weight:300;font-style:italic;font-size:1.3rem;margin-bottom:18px;opacity:.95}
+  .hero-text h1{font-weight:700;font-size:clamp(2.2rem,4.2vw,3.4rem);line-height:1.08;margin-bottom:22px}
+  .hero-photo{position:relative;align-self:end;height:calc(100vh - 65px);min-height:520px;display:flex;justify-content:center;align-items:flex-end}
+  .hero-photo::before{content:"";position:absolute;top:8%;left:50%;transform:translateX(-50%);width:75%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(60,123,170,.75) 0%,rgba(11,63,138,.35) 40%,transparent 70%);filter:blur(10px)}
+  .hero-photo img{position:relative;height:88%;max-height:640px;width:auto;object-fit:contain;z-index:1;-webkit-mask-image:linear-gradient(180deg,#000 85%,transparent);mask-image:linear-gradient(180deg,#000 85%,transparent)}
+  .ph{aspect-ratio:3/4;display:flex;align-items:flex-end;justify-content:center}
+  .ph svg{width:100%;height:100%}
+  .tag{position:absolute;z-index:2;border:1.5px solid #fff;border-radius:10px;padding:8px 16px;font-weight:600;font-size:1.05rem;background:rgba(0,0,0,.35);backdrop-filter:blur(2px);white-space:nowrap;animation:float 5s ease-in-out infinite}
+  .tag.t1{top:38%;right:6%}
+  .tag.t2{top:57%;left:2%;animation-delay:1.2s}
+  .tag.t3{top:76%;right:10%;animation-delay:2.4s}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+  /* ===== ÁREAS ===== */
+  .areas{position:relative;background:#000;padding:90px 0 100px;overflow:hidden}
+  .areas::before{content:"";position:absolute;inset:0;background:
+     radial-gradient(ellipse 22% 40% at 8% 30%,rgba(40,120,140,.28),transparent 70%),
+     radial-gradient(ellipse 22% 40% at 92% 35%,rgba(40,120,140,.28),transparent 70%),
+     radial-gradient(ellipse 18% 30% at 20% 85%,rgba(40,120,140,.18),transparent 70%),
+     radial-gradient(ellipse 18% 30% at 82% 88%,rgba(40,120,140,.18),transparent 70%)}
+  .areas .bg-brain{position:absolute;width:420px;opacity:.13;stroke:#4fb3c4;fill:none;stroke-width:.6}
+  .areas .b1{left:-110px;top:60px}.areas .b2{right:-110px;top:40px;transform:scaleX(-1)}
+  .areas h2{position:relative;color:#fff;font-weight:600;font-size:2.05rem;text-align:center;margin-bottom:40px}
+  .cards{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:17px;width:min(915px,100% - 32px);margin:0 auto}
+  .card{background:#fff;border-radius:10px;padding:26px 16px 28px;transition:.3s}
+  .card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(60,123,170,.35)}
+  .card h3{color:var(--blue);font-weight:600;font-size:1.25rem;margin-bottom:14px}
+  .card p{font-size:.85rem;color:var(--text);line-height:1.45}
+
+  .stripe{height:18px;background:linear-gradient(90deg,var(--blue-dark) 0%,#2c5fa0 20%,#c9d6ea 45%,#fff 60%)}
+
+  /* ===== SOBRE ===== */
+  .about{display:grid;grid-template-columns:1fr 1fr;min-height:600px;align-items:center;background:#fff}
+  .about-img{position:relative;height:100%;min-height:600px;background:linear-gradient(90deg,#0b3f8a 0%,#2a65a8 45%,#9fb9dd 75%,#fff 100%);overflow:hidden;display:flex;align-items:flex-end;justify-content:center}
+  .about-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;mix-blend-mode:luminosity;opacity:.9}
+  .about-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,#fff 100%)}
+  .about-text{padding:60px 14% 60px 6%}
+  .about-text .title{margin-bottom:28px}
+  .about-text p{text-align:justify;font-size:.92rem;color:#333;margin-bottom:14px;line-height:1.55}
+
+  /* ===== DEPOIMENTOS ===== */
+  .reviews{padding:90px 0}
+  .reviews .head{text-align:center;margin-bottom:55px}
+  .slider{position:relative;width:min(920px,100% - 32px);margin:0 auto}
+  .track-wrap{overflow:hidden}
+  .track{display:flex;gap:14px;transition:transform .5s ease}
+  .rv{flex:0 0 calc((100% - 28px)/3);background:#fff;border-radius:6px;box-shadow:0 0 8px rgba(0,0,0,.1);padding:18px 16px}
+  .rv-top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .avatar{width:34px;height:34px;border-radius:50%;background:#dfe7ef;display:grid;place-items:center;font-weight:600;color:var(--blue);font-size:.85rem}
+  .rv-top strong{display:block;font-family:'Roboto',sans-serif;color:#000;font-size:.9rem}
+  .rv-top small{font-size:.75rem;color:#777}
+  .rv-top .g{margin-left:auto;width:20px}
+  .stars{color:#fbbc04;font-size:1.05rem;letter-spacing:1px;margin-bottom:10px}
+  .stars .ok{display:inline-grid;place-items:center;width:15px;height:15px;border-radius:50%;background:#4a8af4;color:#fff;font-size:.6rem;vertical-align:2px;margin-left:4px}
+  .rv p{font-family:'Roboto',sans-serif;font-size:.9rem;color:#000;line-height:1.45}
+  .arrow{position:absolute;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;background:#fff;border:0;box-shadow:0 0 6px rgba(0,0,0,.2);cursor:pointer;color:#555;font-size:1rem}
+  .arrow.prev{left:-44px}.arrow.next{right:-44px}
+
+  /* ===== EXPLICAÇÃO ===== */
+  .explain{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:500px;background:#000;color:#fff;overflow:hidden;margin-top:30px}
+  .explain::before{content:"";position:absolute;inset:0;background:
+     radial-gradient(ellipse 30% 60% at 5% 20%,rgba(40,120,140,.35),transparent 70%),
+     radial-gradient(ellipse 25% 50% at 30% 90%,rgba(40,120,140,.2),transparent 70%)}
+  .explain-text{position:relative;z-index:2;padding:80px 6% 80px 20%}
+  .explain-text h2{font-weight:600;font-size:1.7rem;margin-bottom:18px}
+  .explain-text p{text-align:justify;font-size:.9rem;margin-bottom:12px;line-height:1.55}
+  .explain-text .btn{margin-top:26px}
+  .explain-img{position:relative;background:linear-gradient(135deg,#1c3550,#3c7baa 60%,#c9d6ea);}
+  .explain-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 72%}
+  .explain-img::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#000 0%,rgba(0,0,0,.6) 25%,transparent 60%);z-index:1}
+  .explain-img .ph-txt{position:absolute;inset:0;display:grid;place-items:center;color:rgba(255,255,255,.75);font-size:.85rem;text-align:center;padding:20px}
+
+  /* ===== FAQ ===== */
+  .faq{padding:90px 0 40px}
+  .faq .head{text-align:center;margin-bottom:45px}
+  .acc{border:1px solid #d5d8dc}
+  .acc-item+.acc-item{border-top:1px solid #d5d8dc}
+  .acc-q{width:100%;display:flex;justify-content:space-between;align-items:center;background:#fff;border:0;padding:12px 8px;font:600 .95rem 'Montserrat',sans-serif;color:#222;text-align:left;cursor:pointer}
+  .acc-q .chev{transition:.3s;font-size:.75rem}
+  .acc-item.open .chev{transform:rotate(180deg)}
+  .acc-item.open .acc-q{color:var(--blue)}
+  .acc-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .acc-a p{padding:4px 8px 16px;font-size:.9rem}
+
+  /* ===== LOCALIZAÇÃO ===== */
+  .loc{padding:50px 0 120px}
+  .loc .head{text-align:center;margin-bottom:28px}
+  .loc-tabs{display:flex;justify-content:center;gap:10px;margin-bottom:18px}
+  .loc-tabs button{font:600 .9rem 'Montserrat',sans-serif;padding:9px 18px;border-radius:10px;border:1.5px solid var(--blue);background:#fff;color:var(--blue);cursor:pointer;transition:.2s}
+  .loc-tabs button.active{background:var(--blue);color:#fff}
+  .map{width:100%;height:245px;border:0;display:block;background:#e5e3df}
+  .loc .cta{text-align:center;margin-top:34px}
+
+  /* ===== FOOTER ===== */
+  footer{background:#000;color:#fff;padding:80px 0 14px}
+  .foot{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:30px;align-items:center;width:min(930px,100% - 32px);margin:0 auto 90px}
+  .foot h4{font-family:'Roboto',sans-serif;font-weight:700;font-size:1.15rem;margin-bottom:4px}
+  .foot p{font-family:'Roboto',sans-serif;font-size:.85rem;line-height:1.15}
+  .foot ul{list-style:none;display:grid;gap:10px;font-family:'Roboto',sans-serif;font-size:.85rem;color:#ddd}
+  .foot li{display:flex;gap:10px;align-items:center}
+  .foot li svg{width:14px;height:14px;fill:#fff;flex:none}
+  .foot-icons{display:flex;justify-content:center;gap:8px;margin-top:12px}
+  .foot-icons svg{width:20px;height:20px;fill:#fff}
+  .copy{text-align:center;font-family:'Roboto',sans-serif;font-size:.75rem;color:#ddd}
+
+
+  /* Animações */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.visible{opacity:1;transform:none}
+
+  /* ===== RESPONSIVO ===== */
+  @media(max-width:1100px){.nav-right{gap:24px}.menu{gap:18px}}
+  @media(max-width:960px){
+    .menu{position:fixed;top:65px;left:0;right:0;background:#000;flex-direction:column;align-items:center;gap:22px;padding:28px 0;transform:translateY(-130%);transition:.35s;z-index:-1}
+    .menu.open{transform:none}
+    .burger{display:block}
+    .nav-right .btn-outline{display:none}
+    .hero-inner{grid-template-columns:1fr}
+    .hero-text{padding:50px 0 10px;text-align:center}
+    .hero-photo{height:560px;min-height:0}
+    .tag{font-size:.85rem;padding:6px 12px}
+    .cards{grid-template-columns:1fr 1fr}
+    .about,.explain{grid-template-columns:1fr}
+    .about-img{min-height:420px}
+    .about-text{padding:50px 24px}
+    .explain-text{padding:60px 24px}
+    .explain-img{min-height:300px}
+    .explain-img::before{background:linear-gradient(180deg,#000 0%,transparent 40%)}
+    .rv{flex:0 0 calc((100% - 14px)/2)}
+    .arrow.prev{left:-14px}.arrow.next{right:-14px}
+    .foot{grid-template-columns:1fr;text-align:center}
+    .foot ul li{justify-content:center}
+  }
+  @media(max-width:600px){
+    .socials{display:none}
+    .cards{grid-template-columns:1fr}
+    .rv{flex:0 0 100%}
+    .hero-photo{height:460px}
+    .title{font-size:1.5rem}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================================================================
+  O QUE SUBSTITUIR ANTES DE PUBLICAR
+  1. Fotos: assets/hero.png (PNG com fundo transparente, recortado), assets/sobre.jpg, assets/aneurisma.jpg
+  2. Textos entre [colchetes]: formação, CRM/RQE, endereços, horários
+  3. Depoimentos reais do Google (ou widget Trustindex/Elfsight)
+=================================================================== -->
+
+<header id="header">
+  <div class="nav">
+    <a href="#inicio" class="logo">
+      <svg viewBox="0 0 32 32"><path d="M16 5c-3-2-8-1-9 3-3 0-5 3-4 6-2 2-1 6 2 7 0 3 3 5 6 4 1 2 4 3 5 1V5z"/><path d="M16 5c3-2 8-1 9 3 3 0 5 3 4 6 2 2 1 6-2 7 0 3-3 5-6 4-1 2-4 3-5 1"/><path d="M8 12l3 2 2-3 3 3M24 12l-3 2-2-3-3 3M9 19l3-1 2 2 2-2M23 19l-3-1-2 2-2-2"/></svg>
+      <span>Jaquisson<br>Guimarães</span>
+    </a>
+    <ul class="menu" id="menu">
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#areas">Áreas de atuação</a></li>
+      <li><a href="#sobre">Sobre mim</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#localizacao">Localização</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="socials">
+        <a href="https://www.instagram.com/drjaquissonguimaraes" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3c1.2-.1 1.6-.1 4.8-.1zM12 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg></a>
+        <a href="#" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Google"><svg viewBox="0 0 24 24"><path d="M12.2 10.3v3.6h5.1c-.2 1.3-1.6 3.9-5.1 3.9-3.1 0-5.6-2.6-5.6-5.7s2.5-5.7 5.6-5.7c1.8 0 2.9.7 3.6 1.4l2.4-2.4C16.6 3.9 14.6 3 12.2 3 7.2 3 3.2 7 3.2 12s4 9 9 9c5.2 0 8.6-3.6 8.6-8.8 0-.6-.1-1.1-.2-1.6h-8.4z"/></svg></a>
+      </div>
+      <a href="#localizacao" class="btn-outline">Agende sua consulta</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="inicio">
+  <div class="hero-inner">
+    <div class="hero-text reveal">
+      <h2 class="name">Dr. Jaquisson Guimarães</h2>
+      <h2 class="spec">Neurocirurgião em Salvador e Feira de Santana</h2>
+      <h1>Seu cérebro merece<br>cuidado especializado!</h1>
+      <a href="#localizacao" class="btn">Agende sua consulta</a>
+    </div>
+    <div class="hero-photo">
+      <!-- Troque o bloco .ph por: <img src="assets/hero.png" alt="Dr. Jaquisson Guimarães"> (foto recortada, fundo transparente) -->
+      <img src="assets/hero.png" alt="Dr. Jaquisson Guimarães">
+      <span class="tag t1">Aneurismas</span>
+      <span class="tag t2">Neurocirurgião</span>
+      <span class="tag t3">Hospital Aliança</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ÁREAS DE ATUAÇÃO ===== -->
+<section class="areas" id="areas">
+  <svg class="bg-brain b1" viewBox="0 0 200 160"><path d="M100 20c-20-15-55-10-60 15-25 0-40 25-30 45-15 15-5 45 20 50 5 20 30 30 50 20 10 10 20 10 20 0zM100 20c20-15 55-10 60 15 25 0 40 25 30 45 15 15 5 45-20 50-5 20-30 30-50 20-10 10-20 10-20 0M50 50c15 5 20 20 10 30M40 90c20-5 30 10 25 25M150 50c-15 5-20 20-10 30M160 90c-20-5-30 10-25 25M80 40c10 10 5 25-5 30M120 40c-10 10-5 25 5 30"/></svg>
+  <svg class="bg-brain b2" viewBox="0 0 200 160"><path d="M100 20c-20-15-55-10-60 15-25 0-40 25-30 45-15 15-5 45 20 50 5 20 30 30 50 20 10 10 20 10 20 0zM100 20c20-15 55-10 60 15 25 0 40 25 30 45 15 15 5 45-20 50-5 20-30 30-50 20-10 10-20 10-20 0M50 50c15 5 20 20 10 30M40 90c20-5 30 10 25 25M150 50c-15 5-20 20-10 30M160 90c-20-5-30 10-25 25M80 40c10 10 5 25-5 30M120 40c-10 10-5 25 5 30"/></svg>
+  <h2 class="reveal">Áreas de Atuação</h2>
+  <div class="cards">
+    <div class="card reveal"><h3>Aneurisma Cerebral</h3><p>Dilatação na parede de uma artéria do cérebro que pode romper e causar hemorragia. Diagnóstico e tratamento especializado.</p></div>
+    <div class="card reveal"><h3>Malformações Vasculares</h3><p>Malformações arteriovenosas (MAV) e cavernomas, alterações nos vasos cerebrais que exigem avaliação cuidadosa.</p></div>
+    <div class="card reveal"><h3>AVC Hemorrágico</h3><p>Sangramento dentro do cérebro que requer atendimento rápido e, em alguns casos, intervenção cirúrgica.</p></div>
+    <div class="card reveal"><h3>Tumores Cerebrais</h3><p>Lesões benignas ou malignas do sistema nervoso central, como meningiomas e gliomas, tratadas com técnica e segurança.</p></div>
+    <div class="card reveal"><h3>Doenças da Coluna</h3><p>Hérnia de disco, estenose do canal e compressões nervosas que causam dor, formigamento e perda de força.</p></div>
+    <div class="card reveal"><h3>Hidrocefalia</h3><p>Acúmulo de líquido dentro do crânio que aumenta a pressão no cérebro, tratável com derivações e técnicas endoscópicas.</p></div>
+  </div>
+</section>
+<div class="stripe"></div>
+
+<!-- ===== SOBRE ===== -->
+<section class="about" id="sobre">
+  <div class="about-img">
+    <!-- Troque por: <img src="assets/sobre.jpg" alt="Dr. Jaquisson Guimarães"> -->
+    <img src="assets/sobre.jpg" alt="Dr. Jaquisson Guimarães palestrando">
+  </div>
+  <div class="about-text reveal">
+    <h2 class="title left">Quem sou eu?</h2>
+    <p>Sou o Dr. Jaquisson Guimarães, médico neurocirurgião com atuação dedicada às doenças vasculares do cérebro, em especial os aneurismas cerebrais.</p>
+    <p>Graduei-me em Medicina pela [instituição] e realizei minha residência em Neurocirurgia no [hospital/instituição]. [Inserir especializações, fellowships e títulos.]</p>
+    <p>Hoje atendo em Salvador, no Hospital Aliança, e em Feira de Santana, oferecendo avaliação completa, acompanhamento clínico e tratamento cirúrgico quando indicado. [Inserir sociedades das quais é membro.]</p>
+    <p>Minha missão é oferecer a cada paciente um atendimento atento, humano e individualizado, unindo rigor técnico, segurança e uma explicação clara sobre cada etapa do tratamento.</p>
+  </div>
+</section>
+
+<!-- ===== DEPOIMENTOS ===== -->
+<section class="reviews" id="depoimentos">
+  <div class="head"><h2 class="title reveal">O que meus pacientes dizem?</h2></div>
+  <div class="slider reveal">
+    <button class="arrow prev" aria-label="Anterior">‹</button>
+    <div class="track-wrap"><div class="track" id="track">
+      <!-- Substitua pelos depoimentos reais do Google -->
+      <div class="rv"><div class="rv-top"><div class="avatar">A</div><div><strong>Nome do paciente</strong><small>há 1 mês</small></div><svg class="g" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg></div><div class="stars">★★★★★<span class="ok">✓</span></div><p>[Depoimento real do Google]</p></div>
+      <div class="rv"><div class="rv-top"><div class="avatar">B</div><div><strong>Nome do paciente</strong><small>há 2 meses</small></div><svg class="g" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg></div><div class="stars">★★★★★<span class="ok">✓</span></div><p>[Depoimento real do Google]</p></div>
+      <div class="rv"><div class="rv-top"><div class="avatar">C</div><div><strong>Nome do paciente</strong><small>há 3 meses</small></div><svg class="g" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg></div><div class="stars">★★★★★<span class="ok">✓</span></div><p>[Depoimento real do Google]</p></div>
+      <div class="rv"><div class="rv-top"><div class="avatar">D</div><div><strong>Nome do paciente</strong><small>há 4 meses</small></div><svg class="g" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg></div><div class="stars">★★★★★<span class="ok">✓</span></div><p>[Depoimento real do Google]</p></div>
+      <div class="rv"><div class="rv-top"><div class="avatar">E</div><div><strong>Nome do paciente</strong><small>há 5 meses</small></div><svg class="g" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg></div><div class="stars">★★★★★<span class="ok">✓</span></div><p>[Depoimento real do Google]</p></div>
+    </div></div>
+    <button class="arrow next" aria-label="Próximo">›</button>
+  </div>
+</section>
+
+<!-- ===== O QUE É ANEURISMA ===== -->
+<section class="explain" id="aneurisma">
+  <div class="explain-text reveal">
+    <h2>O que é Aneurisma Cerebral?</h2>
+    <p>O aneurisma cerebral é uma dilatação anormal na parede de uma artéria do cérebro, semelhante a um pequeno "balão". Na maioria das vezes não causa sintomas e é descoberto por acaso, em exames de imagem como tomografia, ressonância ou angiografia.</p>
+    <p>O principal risco é a ruptura, que provoca uma hemorragia grave. Sinais como dor de cabeça súbita e muito intensa, rigidez na nuca, vômitos, alteração visual ou desmaio exigem atendimento de emergência imediato.</p>
+    <p>Com avaliação especializada, é possível definir se o aneurisma deve ser apenas acompanhado ou tratado, seja por cirurgia (clipagem) ou por via endovascular, escolhendo a opção mais segura para cada paciente.</p>
+    <a href="#localizacao" class="btn btn-lg">Agende sua consulta</a>
+  </div>
+  <div class="explain-img">
+    <!-- Troque por: <img src="assets/aneurisma.jpg" alt="Neurocirurgia"> -->
+    <img src="assets/aneurisma.jpg" alt="Dr. Jaquisson Guimarães operando ao microscópio">
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq">
+  <div class="head"><h2 class="title reveal">Dúvidas Frequentes</h2></div>
+  <div class="narrow acc reveal">
+    <div class="acc-item"><button class="acc-q">O que faz um neurocirurgião?<span class="chev">▼</span></button><div class="acc-a"><p>O neurocirurgião diagnostica e trata, inclusive cirurgicamente, doenças do cérebro, da medula espinhal, da coluna e dos nervos. Muitos casos são tratados sem cirurgia, apenas com acompanhamento.</p></div></div>
+    <div class="acc-item"><button class="acc-q">Todo aneurisma cerebral precisa de cirurgia?<span class="chev">▼</span></button><div class="acc-a"><p>Não. A decisão depende do tamanho, formato e localização do aneurisma, além da idade e do histórico do paciente. Alguns casos podem ser apenas acompanhados com exames periódicos.</p></div></div>
+    <div class="acc-item"><button class="acc-q">O que devo levar na primeira consulta?<span class="chev">▼</span></button><div class="acc-a"><p>Leve todos os exames de imagem que tiver (com as imagens e os laudos), exames de sangue recentes, relatórios médicos anteriores e a lista de medicamentos em uso.</p></div></div>
+    <div class="acc-item"><button class="acc-q">Quando devo procurar um neurocirurgião?<span class="chev">▼</span></button><div class="acc-a"><p>Quando um exame mostrar alteração no cérebro ou na coluna, em casos de dor na coluna com irradiação para braços ou pernas, ou por encaminhamento de outro médico.</p></div></div>
+    <div class="acc-item"><button class="acc-q">Onde são realizados os atendimentos?<span class="chev">▼</span></button><div class="acc-a"><p>Em Salvador, no Hospital Aliança, e em Feira de Santana. Escolha a unidade mais próxima de você.</p></div></div>
+  </div>
+</section>
+
+<!-- ===== LOCALIZAÇÃO ===== -->
+<section class="loc" id="localizacao">
+  <div class="head"><h2 class="title reveal">Localização</h2></div>
+  <div class="narrow reveal">
+    <div class="loc-tabs">
+      <button class="active" data-map="https://www.google.com/maps?q=Hospital+Alian%C3%A7a+Salvador+BA&output=embed">Salvador – Hospital Aliança</button>
+      <button data-map="https://www.google.com/maps?q=Feira+de+Santana+BA&output=embed">Feira de Santana</button>
+    </div>
+    <iframe class="map" id="map" loading="lazy" title="Mapa" src="https://www.google.com/maps?q=Hospital+Alian%C3%A7a+Salvador+BA&output=embed"></iframe>
+    <div class="cta"><a href="#localizacao" class="btn btn-lg">Agende sua consulta</a></div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="foot">
+    <div>
+      <h4>Dr. Jaquisson Guimarães</h4>
+      <p>Neurocirurgião especialista em aneurismas cerebrais em Salvador e Feira de Santana.</p>
+    </div>
+    <div>
+      <h4>Horário de Atendimento</h4>
+      <p>[Dias e horários]</p>
+    </div>
+    <div>
+      <ul>
+        <li><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>Hospital Aliança – [endereço], Salvador</li>
+        <li><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>[Endereço], Feira de Santana</li>
+      </ul>
+      <div class="foot-icons">
+        <a href="https://www.instagram.com/drjaquissonguimaraes" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3c1.2-.1 1.6-.1 4.8-.1zM12 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg></a>
+        <a href="#" aria-label="Google"><svg viewBox="0 0 24 24"><path d="M12.2 10.3v3.6h5.1c-.2 1.3-1.6 3.9-5.1 3.9-3.1 0-5.6-2.6-5.6-5.7s2.5-5.7 5.6-5.7c1.8 0 2.9.7 3.6 1.4l2.4-2.4C16.6 3.9 14.6 3 12.2 3 7.2 3 3.2 7 3.2 12s4 9 9 9c5.2 0 8.6-3.6 8.6-8.8 0-.6-.1-1.1-.2-1.6h-8.4z"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <p class="copy">© <span id="year"></span> Dr. Jaquisson Guimarães. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+  // Header
+  const header = document.getElementById('header');
+  addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 20));
+
+  // Menu mobile
+  const burger = document.getElementById('burger'), menu = document.getElementById('menu');
+  burger.onclick = () => { burger.classList.toggle('open'); menu.classList.toggle('open'); };
+  menu.querySelectorAll('a').forEach(a => a.onclick = () => { burger.classList.remove('open'); menu.classList.remove('open'); });
+
+  // Carrossel de depoimentos
+  const track = document.getElementById('track');
+  let idx = 0;
+  const perView = () => innerWidth <= 600 ? 1 : innerWidth <= 960 ? 2 : 3;
+  const go = d => {
+    const total = track.children.length, max = total - perView();
+    idx = idx + d > max ? 0 : idx + d < 0 ? max : idx + d;
+    const w = track.children[0].getBoundingClientRect().width + 14;
+    track.style.transform = `translateX(${-idx * w}px)`;
+  };
+  document.querySelector('.arrow.next').onclick = () => go(1);
+  document.querySelector('.arrow.prev').onclick = () => go(-1);
+  addEventListener('resize', () => { idx = 0; go(0); });
+  setInterval(() => go(1), 6000);
+
+  // FAQ
+  document.querySelectorAll('.acc-item').forEach(item => {
+    item.querySelector('.acc-q').onclick = () => {
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.acc-item').forEach(i => { i.classList.remove('open'); i.querySelector('.acc-a').style.maxHeight = null; });
+      if (!open) { item.classList.add('open'); const a = item.querySelector('.acc-a'); a.style.maxHeight = a.scrollHeight + 'px'; }
+    };
+  });
+
+  // Abas do mapa
+  document.querySelectorAll('.loc-tabs button').forEach(b => b.onclick = () => {
+    document.querySelectorAll('.loc-tabs button').forEach(x => x.classList.remove('active'));
+    b.classList.add('active'); document.getElementById('map').src = b.dataset.map;
+  });
+
+  // Animação de entrada
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
